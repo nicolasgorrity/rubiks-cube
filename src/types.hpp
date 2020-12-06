@@ -26,9 +26,15 @@ namespace rubiks {
         }
     };
 
+    /**
+     * @brief Alias for an array of Corner*
+     */
     template<std::size_t length>
     using CornerPtrArray_ = std::array<Corner*, length>;
 
+    /**
+     * @brief Alias for an array of Edge*
+     */
     template<std::size_t length>
     using EdgePtrArray_ = std::array<Edge*, length>;
 

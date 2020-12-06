@@ -6,6 +6,7 @@
 #include "colors.hpp"
 #include "positions.hpp"
 
+
 namespace rubiks {
 
     class ColorFinder {

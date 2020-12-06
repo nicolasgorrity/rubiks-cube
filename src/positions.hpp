@@ -21,6 +21,11 @@ namespace rubiks {
         BOTTOM
     };
 
+    /**
+     * @brief Returns all possible values of FacePose.
+     * @details Returns an array of all possible values of a FacePose.
+     * @return Array of FacePoses
+     */
     std::array<FacePose, 6> _getAllFacePoses();
 
     /**
@@ -32,6 +37,9 @@ namespace rubiks {
      */
     std::ostream &operator<<(std::ostream &os, const FacePose &facePose);
 
+    /**
+     * @brief Alias for a RandomGenerator of FacePoses
+     */
     using RandomCubeFaceGenerator_ = RandomGenerator<FacePose, 6>;
 
 }

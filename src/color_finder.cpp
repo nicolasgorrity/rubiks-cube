@@ -1,5 +1,6 @@
 #include "color_finder.hpp"
 
+
 namespace rubiks {
 
     ColorFinder::One2OneColorMap_ ColorFinder::initializeOppositeMap() noexcept {

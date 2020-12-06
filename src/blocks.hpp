@@ -7,6 +7,7 @@
 
 #include "colors.hpp"
 
+
 namespace rubiks {
 
     template<std::size_t nbFaces>

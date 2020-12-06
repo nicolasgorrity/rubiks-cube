@@ -1,5 +1,6 @@
 #include "colors.hpp"
 
+
 namespace rubiks {
 
     std::ostream &operator<<(std::ostream &os, const Color &color) {
