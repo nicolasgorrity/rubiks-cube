@@ -49,6 +49,20 @@ namespace rubiks {
 
     };
 
+    /**
+     * @brief Prints a cube representation in the ostream.
+     * @param os Output stream in which to print the Color value
+     * @param cube Cube to print
+     * @return Reference to the processed os stream
+     */
     std::ostream &operator<<(std::ostream &os, const Cube &cube);
+
+    /**
+     * @brief Prints a representation of the row of a cube face in the ostream.
+     * @param os Output stream in which to print the row
+     * @param row Row to print
+     * @return Reference to the processed os stream
+     */
     std::ostream &operator<<(std::ostream &os, const std::array<Color, 3> &row);
+
 }

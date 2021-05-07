@@ -22,7 +22,14 @@ namespace rubiks {
         UNDEFINED
     };
 
+    /**
+     * @brief Alias for transparent typing of Color hash values
+     */
     using HashColor = char;
+
+    /**
+     * @brief Alias for transparent typing of hash values of arrays of Color
+     */
     using HashColorArray = std::string;
 
     /**
@@ -63,10 +70,9 @@ namespace rubiks {
 
     /**
      * @brief Prints a Color value in the ostream.
-     * @details Adds a string representation of the input Color value to the ostream object.
      * @param os Output stream in which to print the Color value
      * @param color Element to print
-     * @return Reference to the modified os stream
+     * @return Reference to the processed os stream
      */
     std::ostream &operator<<(std::ostream &os, const Color &color);
 

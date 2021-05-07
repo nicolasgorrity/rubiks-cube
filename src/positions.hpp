@@ -30,7 +30,6 @@ namespace rubiks {
 
     /**
      * @brief Prints a FacePose value in the ostream.
-     * @details Adds a string representation of the input FacePose value to the ostream object.
      * @param os Output stream in which to print the FacePose value
      * @param facePose Element to print
      * @return Reference to the modified os stream
