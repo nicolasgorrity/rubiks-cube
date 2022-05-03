@@ -7,7 +7,7 @@
 namespace rubiks {
 
     /**
-     * @class RandomGenerator
+     * @class RandomGenerator<T, N>
      * @brief Draws random samples from an input array with a uniform distribution
      * @tparam T type of samples to draw
      * @tparam N size of input array to draw from

@@ -10,25 +10,75 @@
 
 namespace rubiks {
 
+    /**
+     * @class Block<nbFaces>
+     * @brief Block of a Cube
+     * @tparam nbFaces number of faces on the block
+     */
     template<std::size_t nbFaces>
     class Block {
     public:
+        /**
+         * @brief Builds a non-initialized block
+         */
         Block() = default;
+
+        /**
+         * @brief Builds a block with given colors, mapping them to the corresponding cube face
+         * @param colors block colors
+         */
         explicit Block(std::array<Color, nbFaces>&& colors);
+
+        /**
+         * @brief Builds a block with given block colors mapped to the given cube faces colors
+         * @param blockFacesColors colors of the block faces
+         * @param cubeFacesColors colors of the cube faces to be mapped to the block faces
+         */
         Block(std::array<Color, nbFaces>&& blockFacesColors, std::array<Color, nbFaces>&& cubeFacesColors);
+
         ~Block() = default;
 
+        /**
+         * @brief determines if all the colors of the block are placed on the cube faces with matching colors
+         * @return true if the block is correctly placed, false otherwise
+         */
         bool isWellPlaced() const;
 
+        /**
+         * @brief Initializes a block with given colors, mapping them to the corresponding cube face
+         * @param colors block colors
+         */
         void initColorsPlaces(std::array<Color, nbFaces>&& blockFacesColors);
+
+        /**
+         * @brief initializes a block with given block colors mapped to the given cube faces colors
+         * @param blockFacesColors colors of the block faces
+         * @param cubeFacesColors colors of the cube faces to be mapped to the block faces
+         */
         void initColorsPlaces(std::array<Color, nbFaces>&& blockFacesColors, std::array<Color, nbFaces>&& cubeFacesColors);
+
+        /**
+         * @brief Maps the given cube face color to the given block face color
+         * @param color block face color
+         * @param faceColor cube face color
+         * @param doHash whether to re-compute the hash value of the block after this operation (defaults to true)
+         */
         void setColorPlace(const Color& color, const Color& faceColor, bool doHash=true);
+
+        /**
+         * @brief Maps the given cube faces color to the given block faces colors, then recomputes the block' hash value
+         * @param color block faces colors
+         * @param faceColor cube faces colors
+         */
         void setColorsPlaces(std::array<Color, nbFaces>&& blockFacesColors, std::array<Color, nbFaces>&& cubeFacesColors);
 
         const std::map<Color, Color>& blockColors() const;
         const HashColorArray& hashValue() const;
 
     private:
+        /**
+         * @brief Computes the internal hash value of the block
+         */
         void hash();
 
         std::map<Color, Color> blockColors_;
